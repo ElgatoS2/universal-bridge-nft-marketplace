@@ -12,7 +12,7 @@ import { useActiveAccount } from "thirdweb/react";
 import { defineChain, getContract } from "thirdweb";
 import { client } from "@/app/client";
 
-import { arbitrumSepolia } from "thirdweb/chains";
+import { bitrock } from "@/components/chain";
 import { MARKETPLACE_CONTRACT_ADDRESS } from "@/constants/addresses";
 type Listing = {
   id: string;
@@ -44,7 +44,7 @@ export default function NFTGrid() {
   // State to track which NFTs are liked by the user
   const [likedNfts, setLikedNfts] = useState<string[]>([]);
 
-  const chain = defineChain(arbitrumSepolia);
+  const chain = defineChain(bitrock);
 
   const market = getContract({
     address: MARKETPLACE_CONTRACT_ADDRESS,
